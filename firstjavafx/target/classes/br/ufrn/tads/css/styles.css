@@ -1,0 +1,32 @@
+#buttonAgendar{
+    -fx-background-color: rgb(32, 129, 32);
+    color: white;
+    -fx-border-radius:20px;
+    border-radius: 5px;
+}
+#buttonAgendar:hover{
+    -fx-background-color: rgb(59, 167, 59);
+
+}
+#painelUser{
+    -fx-border-radius: 55px;
+
+}
+.painelUser{
+    -fx-border-radius: 55px;
+
+}
+.btnsLogin{
+    -fx-background-color: rgb(29, 112, 47);
+}
+.btnsLogin:hover{
+    -fx-background-color: rgb(46, 155, 70);
+}
+.horarioList{
+    -fx-background-color: rgb(77, 77, 77);
+}
+#nickName{
+    padding: 5px;
+    -fx-background-color: rgb(73, 73, 73);
+    border-radius: 5px;
+}
