@@ -24,5 +24,8 @@ public class HorariosService {
         public void confirmar(Horarios t){
             HorariosDao.update(t, null);
     }
+        public void cancelarHorario(Horarios t){
+            HorariosDao.cancelarHorario(t);
+    }
 
 }

@@ -184,5 +184,35 @@ public class HorariosDao implements Dao<Horarios> {
     }
 
 
+    public boolean cancelarHorario(Horarios t) {
+    String nome = UserSession.getInstance().getUserName();
+    String sql = "update horarios set vago = true, agendado_por = 1 where id = ?"; 
+    System.out.println(t.getId()+ "e "+t.getVago());
+    Connection conn = null;
+    PreparedStatement preparedStatement = null;
+    try {
+        conn = DBconnection.getConnection();
+        preparedStatement = conn.prepareStatement(sql);
+        preparedStatement.setLong(1, t.getId());
+        preparedStatement.execute(); //it is not a query. It is an insert command
+        
+    } catch(Exception e) {
+        e.printStackTrace();
+    } finally {
+        // close all connections
+        try {
+            if (preparedStatement != null) preparedStatement.close();
+            if (conn != null) conn.close();
+            return true;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    return false;
+        
+    }
+
+
+
     
 }

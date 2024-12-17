@@ -41,10 +41,10 @@ public class indexAdminController {
 
     @FXML
     private Label userName;
-
+    HorariosService hrService = new HorariosService();
     @FXML
     void initialize() throws SQLException {
-        HorariosService hrService = new HorariosService();
+
         Image userImg = new Image("user.png");
         userImage.setImage(userImg);
         List<Horarios> hr = hrService.buscarHorariosParaTabelaDoAdmin();
@@ -58,7 +58,7 @@ public class indexAdminController {
         tableAdmin.setItems(list);
         
         for (Horarios horarios : hr) {
-            System.out.println(horarios.getId() + " " + horarios.getHora() + " " + horarios.getAgendadoPor());
+            System.out.println(horarios + " " + horarios.getHora() + " " + horarios.getAgendadoPor());
         }
 
         String nome = UserSession.getInstance().getUserName();
@@ -71,8 +71,10 @@ public class indexAdminController {
         UserSession.getInstance().loggof();
         App.setRoot("login");
     }
-    public void cancelarHorario() throws IOException {
-      
+    public void cancelarHorario() throws IOException, SQLException {
+    hrService.cancelarHorario(tableAdmin.getSelectionModel().getSelectedItem());
+      initialize();
+        
     }
 
     
