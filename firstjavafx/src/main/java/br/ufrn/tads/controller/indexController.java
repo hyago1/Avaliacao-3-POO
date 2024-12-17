@@ -49,13 +49,20 @@ public class indexController {
         userName.setText(nome); 
         List<Horarios> hr = hrService.buscarHorariosId();
         System.out.println(hr);
+
         for (Horarios horarios : hr) {
                 userHorarioList.getItems().add(horarios.getHora());
-        }
-        }
+        } 
+
+}
+
 
         public void telaAgendar() throws IOException{
                 App.setRoot("telaAgendar");
+        }
+        public void loggof() throws IOException{
+                UserSession.getInstance().loggof();
+                App.setRoot("login");
         }
      
 

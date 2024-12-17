@@ -6,31 +6,32 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #323436;" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.agendarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #323436;" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.agendarController">
    <children>
-      <Pane layoutX="27.0" layoutY="76.0" prefHeight="271.0" prefWidth="548.0">
-         <children>
-            <ListView fx:id="list" layoutX="23.0" layoutY="36.0" prefHeight="200.0" prefWidth="498.0" />
-            <Label layoutX="23.0" layoutY="2.0" text="Horarios Vagos:" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <ImageView fx:id="userImage" fitHeight="35.0" fitWidth="39.0" layoutX="538.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
-      <Label id="nickName" fx:id="userName" alignment="CENTER" contentDisplay="CENTER" layoutX="437.0" layoutY="32.0" prefHeight="20.0" prefWidth="93.0" textAlignment="CENTER" textFill="#a2eb8c" textOverrun="CLIP">
+      <Label layoutX="209.0" layoutY="114.0" text="Horarios Vagos:" textFill="#bcb1b1">
          <font>
-            <Font name="Candara" size="16.0" />
+            <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="27.0" layoutY="357.0" mnemonicParsing="false" onAction="#telaIndex" prefHeight="29.0" prefWidth="73.0" styleClass="btnsLogin" text="Voltar" textFill="WHITE" />
-      <Button layoutX="495.0" layoutY="357.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="29.0" prefWidth="80.0" styleClass="btnsLogin" text="Confirmar" textFill="WHITE">
+      <ImageView fx:id="userImage" fitHeight="35.0" fitWidth="39.0" layoutX="931.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" />
+      <Label id="nickName" fx:id="userName" alignment="CENTER" contentDisplay="CENTER" layoutX="771.0" layoutY="28.0" prefHeight="37.0" prefWidth="157.0" textAlignment="CENTER" textFill="#a2eb8c" textOverrun="CLIP">
+         <font>
+            <Font name="Candara" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="68.0" layoutY="523.0" mnemonicParsing="false" onAction="#telaIndex" prefHeight="40.0" prefWidth="73.0" styleClass="btnsLogin" text="Voltar" textFill="WHITE" />
+      <Button layoutX="854.0" layoutY="521.0" mnemonicParsing="false" onAction="#confirmar" prefHeight="40.0" prefWidth="80.0" styleClass="btnsLogin" text="Confirmar" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ListView id="listHorarioAgendar" fx:id="list" layoutX="214.0" layoutY="144.0" prefHeight="312.0" prefWidth="583.0" />
+      <Label fx:id="msgStatusLogin" alignment="CENTER" layoutX="-1.0" layoutY="28.0" prefHeight="17.0" prefWidth="284.0" text="campoSociety" textFill="#00900e">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

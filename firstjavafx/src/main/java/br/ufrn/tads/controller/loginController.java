@@ -35,7 +35,7 @@ public class loginController {
     private Label msgStatus;
 
     @FXML
-    
+
     private void TelaCadastrar() throws IOException {
 
         App.setRoot("cadastro");
@@ -50,23 +50,32 @@ public class loginController {
 
             cpf = Long.parseLong(cpfUser.getText());
         }
-        String nome = userService.autenticarUsuario(cpf, senha);
-        if (nome != null) {
-            UserSession.getInstance().setUserName(nome);
-            App.setRoot("index");
-        } else {
-            setMsg("CPF/Senha inválidos");
+        if (!senha.isEmpty() && cpf != null) {
+            String nome = userService.autenticarUsuario(cpf, senha);
+            if (nome != null) {
+                UserSession.getInstance().setUserName(nome);
+                if (UserSession.getInstance().getId() == 1) {
+                    App.setRoot("indexAdmin");
+                } else {
 
+                    App.setRoot("index");
+                }
+            } else {
+            }
+
+            setMsg("CPF ou Senha inválidos");
+            msgStatus.setTextFill(Color.RED);
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
                     setMsg("Login");
-                    msgStatus.setTextFill(Color.BLACK);
+                    msgStatus.setTextFill(Color.rgb(116, 116, 116));
 
                 }
             }, 2000);
         }
+
     }
 
     public void setMsg(String menssagem) {

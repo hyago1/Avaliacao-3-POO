@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #323436;" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.cadastroController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #323436;" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.cadastroController">
    <children>
-      <VBox layoutX="109.0" layoutY="109.0" prefHeight="238.0" prefWidth="383.0" style="-fx-alignment: center;">
+      <VBox layoutX="352.0" layoutY="206.0" prefHeight="238.0" prefWidth="295.0" style="-fx-alignment: center;">
          <children>
             <Label fx:id="msgStatus" alignment="CENTER" prefHeight="17.0" prefWidth="284.0" text="Cadastrar Usuario" textFill="#838383">
                <font>
@@ -44,7 +44,7 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="msgStatusLogin" alignment="CENTER" layoutX="159.0" layoutY="33.0" prefHeight="17.0" prefWidth="284.0" text="campoSociety" textFill="#00900e">
+      <Label fx:id="msgStatusLogin" alignment="CENTER" layoutX="356.0" layoutY="66.0" prefHeight="17.0" prefWidth="284.0" text="campoSociety" textFill="#00900e">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>

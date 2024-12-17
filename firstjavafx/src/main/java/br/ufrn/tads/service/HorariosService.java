@@ -13,6 +13,9 @@ public class HorariosService {
        public List<Horarios> buscarHorarios() throws SQLException{
          return HorariosDao.findAll();
     }
+       public List<Horarios> buscarHorariosParaTabelaDoAdmin() throws SQLException{
+         return HorariosDao.findAllParaTabelaDoAdmin();
+    }
        public List<Horarios> buscarHorariosId() throws SQLException{
         Long id = UserSession.getInstance().getId();
         System.out.println("hrService: "+id);

@@ -12,8 +12,11 @@
     -fx-border-radius: 55px;
 
 }
-.painelUser{
-    -fx-border-radius: 55px;
+.userPainel{
+    -fx-background-color: #333333; 
+    -fx-background-radius: 10; 
+    -fx-border-radius: 10; 
+    
 
 }
 .btnsLogin{
@@ -22,11 +25,49 @@
 .btnsLogin:hover{
     -fx-background-color: rgb(46, 155, 70);
 }
+#tableAdmin{
+    -fx-background-color: #3b4040;
+    -fx-text-fill: white;
+
+}
+.column{
+    -fx-text-fill: white;
+    -fx-color: aliceblue;
+    -fx-background-color: rgb(69, 71, 73);
+
+}
+
+.column:hover{
+    -fx-background-color: rgb(52, 161, 76);; /* Fundo ao selecionar */
+   
+}
 .horarioList{
-    -fx-background-color: rgb(77, 77, 77);
+    -fx-background-color: rgb(76, 81, 82);
 }
 #nickName{
     padding: 5px;
     -fx-background-color: rgb(73, 73, 73);
     border-radius: 5px;
+}
+#listHorarioAgendar{
+    -fx-background-color:rgb(67, 68, 68) ;
+    -fx-text-fill: white;
+}
+.list-cell {
+    -fx-background-color: transparent; /* Remove o fundo branco padrão dos itens */
+    -fx-border-color: transparent;     /* Remove as bordas padrão */
+    -fx-text-fill: white;              /* Define a cor do texto como branca */
+}
+ .list-cell:hover {
+    -fx-background-color:  rgb(46, 155, 70); /* Remove o fundo branco padrão dos itens */
+}
+#listHorarioAgendar .list-cell:filled:selected {
+    -fx-background-color: rgb(62, 179, 88);
+    -fx-text-fill: white; 
+}
+#btnLoggof{
+    -fx-background-color: rgb(199, 76, 76);; /* Fundo ao selecionar */ 
+}
+#btnLoggof:hover{
+    -fx-background-color: rgb(165, 42, 42);; /* Fundo ao selecionar */ 
 }

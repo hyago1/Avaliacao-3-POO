@@ -8,9 +8,18 @@ public class Horarios {
     private Time hora;
 
     private Boolean vago;
+    private String agendadoPor;
 
     public Horarios() {
    
+    }
+
+    public String getAgendadoPor() {
+        return agendadoPor;
+    }
+
+    public void setAgendadoPor(String agendadoPor) {
+        this.agendadoPor = agendadoPor;
     }
 
     public Time getHora() {

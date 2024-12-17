@@ -32,7 +32,7 @@ public class HorariosDao implements Dao<Horarios> {
                 hour.setId(resultSet.getInt("id")); // "id" is the column at postgres
                 hour.setHora(resultSet.getTime("hora")); // "id" is the column at postgres
                 hour.setVago(resultSet.getBoolean("vago")); // "id" is the column at postgres
-
+                hour.setAgendadoPor(resultSet.getString("agendado_por")); // "id" is the column at postgres
                 horarios.add(hour); // add the object filled with database data to products list
             }
         } catch (Exception e) {
@@ -54,7 +54,11 @@ public class HorariosDao implements Dao<Horarios> {
     @Override
     public List<Horarios>  findById(Long id) {
         List<Horarios> horarios = new ArrayList<Horarios>();
-        String sql = "select * from horarios where agendado_por = ?"; // ? is a parameters for the prepared statement
+        String sql = "select * from horarios"; // ? is a parameters for the prepared statement
+        if (id != 1) {
+            
+            sql = "select * from horarios where agendado_por = ?"; // ? is a parameters for the prepared statement
+        }
         Connection conn = null;
         // prepares a query
         PreparedStatement preparedStatement = null;
@@ -64,7 +68,7 @@ public class HorariosDao implements Dao<Horarios> {
             conn = DBconnection.getConnection();
             preparedStatement = conn.prepareStatement(sql);
             // sending the parameter to sql execution
-            preparedStatement.setInt(1, id.intValue()); // id is an object, not primitive (intValue required)
+            if(id!=1)preparedStatement.setInt(1, id.intValue()); // id is an object, not primitive (intValue required)
             resultSet = preparedStatement.executeQuery();
             // iterates the resultSet and stores in the object the column values from the database
             while (resultSet.next()){
@@ -72,6 +76,7 @@ public class HorariosDao implements Dao<Horarios> {
                 hour.setId(resultSet.getInt("id")); // "id" is the column at postgres
                 hour.setHora(resultSet.getTime("hora")); // "id" is the column at postgres
                 hour.setVago(resultSet.getBoolean("vago")); // "id" is the column at postgres
+                hour.setAgendadoPor(resultSet.getString("agendado_por")); // "id" is the column at postgres
                 horarios.add(hour);
             }
         } catch(Exception e) {
@@ -110,7 +115,7 @@ public class HorariosDao implements Dao<Horarios> {
         // TODO Auto-generated method stub
     // TODO Auto-generated method stub
     String nome = UserSession.getInstance().getUserName();
-    String sql = "update horarios set vago = true, agendado_por = (select id from usuarios where nome = '"+nome+"') where id = ?"; 
+    String sql = "update horarios set vago = false, agendado_por = (select id from usuarios where nome = '"+nome+"') where id = ?"; 
     Connection conn = null;
     // prepares a query
     PreparedStatement preparedStatement = null;
@@ -138,6 +143,46 @@ public class HorariosDao implements Dao<Horarios> {
     return false;
         
     }
+
+
+    public List<Horarios> findAllParaTabelaDoAdmin() { // listAll (if the database is huge, consider the use of pagination)
+        List<Horarios> horarios = new ArrayList<Horarios>();
+        String sql = "SELECT horarios.id, hora, usuarios.nome FROM horarios" + 
+                        " INNER JOIN usuarios ON horarios.agendado_por = usuarios.id";
+        Connection conn = null;
+        // prepares a query
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null; // stores the query result
+
+        try {
+            conn = DBconnection.getConnection();
+            preparedStatement = conn.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            // iterates the resultSet and stores in the object the column values from the
+            // database
+            while (resultSet.next()) {
+                Horarios hour = new Horarios();
+                hour.setId(resultSet.getInt("id")); // "id" is the column at postgres
+                hour.setHora(resultSet.getTime("hora")); // "id" is the column at postgres // "id" is the column at postgres
+                hour.setAgendadoPor(resultSet.getString("nome")); // "id" is the column at postgres
+                horarios.add(hour); // add the object filled with database data to products list
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // close all connections
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+                if (conn != null)
+                    conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return horarios;
+    }
+
 
     
 }

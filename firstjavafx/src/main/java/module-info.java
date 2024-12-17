@@ -5,4 +5,5 @@ module br.ufrn.tads {
 
     opens br.ufrn.tads.controller to javafx.fxml;
     exports br.ufrn.tads;
+    opens br.ufrn.tads.model to javafx.base; 
 }

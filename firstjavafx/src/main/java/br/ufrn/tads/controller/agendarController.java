@@ -37,17 +37,16 @@ public class agendarController {
     @FXML
     void initialize() throws SQLException {
         Image userImg = new Image("user.png");
-
         userImage.setImage(userImg);
         List<Horarios> hr = buscarHorarios();
         
         for (Horarios horarios : hr) {
             System.out.println(horarios.getVago());
-            if (!horarios.getVago()) {
-                
+            if (horarios.getVago()) {
                 list.getItems().add(horarios.getHora());
             }
         }
+        
         String nome = UserSession.getInstance().getUserName();
         userName.setText(nome);
 

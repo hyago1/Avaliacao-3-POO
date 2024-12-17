@@ -4,15 +4,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #323436;" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.loginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #323436;" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.loginController">
    <children>
-      <VBox alignment="CENTER" layoutX="117.0" layoutY="84.0" prefHeight="259.0" prefWidth="369.0">
+      <VBox alignment="CENTER" layoutX="355.0" layoutY="198.0" prefHeight="259.0" prefWidth="290.0">
          <children>
+            <ProgressBar fx:id="progressLogin" prefWidth="200.0" progress="0.0" />
             <Label fx:id="msgStatus" alignment="CENTER" prefHeight="17.0" prefWidth="284.0" text="Login" textFill="#838383">
                <font>
                   <Font name="System Bold" size="14.0" />
@@ -46,7 +48,7 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="msgStatusLogin" alignment="CENTER" layoutX="159.0" layoutY="33.0" prefHeight="17.0" prefWidth="284.0" text="campoSociety" textFill="#00900e">
+      <Label fx:id="msgStatusLogin" alignment="CENTER" layoutX="358.0" layoutY="69.0" prefHeight="17.0" prefWidth="284.0" text="campoSociety" textFill="#00900e">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>

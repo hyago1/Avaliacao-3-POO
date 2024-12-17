@@ -31,4 +31,8 @@ public class UserSession {
         System.out.println("chegou no usersession "+getUserName());
         this.userName = userName;
     }
+    public void loggof(){
+        setId(null);
+        setUserName(null);
+    }
 }

@@ -9,33 +9,41 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #323436;" styleClass="paine" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.indexController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #323436;" styleClass="paine" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.tads.controller.indexController">
    <children>
-      <Pane id="userPainel" layoutX="25.0" layoutY="28.0" prefHeight="345.0" prefWidth="200.0" style="-fx-background-color: #3e4040;" styleClass="userPainel">
+      <Pane id="userPainel" layoutX="63.0" layoutY="33.0" prefHeight="530.0" prefWidth="286.0" style="-fx-background-color: #3e4040;" styleClass="userPainel">
          <children>
-            <ImageView fx:id="userImage" fitHeight="56.0" fitWidth="65.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="userImage" fitHeight="40.0" fitWidth="46.0" layoutX="28.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
             <Label id="nickName" fx:id="userName" alignment="CENTER" contentDisplay="CENTER" layoutX="79.0" layoutY="32.0" prefHeight="20.0" prefWidth="93.0" textAlignment="CENTER" textFill="#a2eb8c" textOverrun="CLIP">
                <font>
                   <Font name="Candara" size="16.0" />
                </font></Label>
-            <ListView fx:id="userHorarioList" layoutX="16.0" layoutY="116.0" prefHeight="218.0" prefWidth="169.0" styleClass="horarioList" />
-            <Label layoutX="16.0" layoutY="90.0" text="Meus Horarios" textFill="#a2aba2" />
+            <ListView fx:id="userHorarioList" layoutX="35.0" layoutY="127.0" prefHeight="300.0" prefWidth="213.0" styleClass="horarioList" />
+            <Label layoutX="28.0" layoutY="89.0" text="Meus Horarios" textFill="#a2aba2" />
+            <Button id="btnLoggof" layoutX="69.0" layoutY="476.0" mnemonicParsing="false" onAction="#loggof" prefHeight="35.0" prefWidth="144.0" text="Sair" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
-      <Pane layoutX="254.0" layoutY="79.0" prefHeight="218.0" prefWidth="321.0" style="-fx-background-color: #3b4040;">
+      <Pane layoutX="406.0" layoutY="179.0" prefHeight="237.0" prefWidth="539.0" style="-fx-background-color: #3b4040;">
          <children>
-            <Button id="buttonAgendar" layoutX="88.0" layoutY="144.0" mnemonicParsing="false" onAction="#telaAgendar" prefHeight="3.0" prefWidth="145.0" text="Agendar" textFill="WHITE">
+            <Button id="buttonAgendar" layoutX="190.0" layoutY="158.0" mnemonicParsing="false" onAction="#telaAgendar" prefHeight="40.0" prefWidth="156.0" text="Agendar" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Label layoutX="27.0" layoutY="96.0" prefHeight="26.0" prefWidth="267.0" text="Agende um horário para seu FUT" textFill="WHITE">
+            <Label layoutX="136.0" layoutY="105.0" prefHeight="26.0" prefWidth="267.0" text="Agende um horário para seu FUT" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font></Label>
-            <ImageView fx:id="ballImage" fitHeight="64.0" fitWidth="65.0" layoutX="128.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ballImage" fitHeight="64.0" fitWidth="65.0" layoutX="234.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
    </children>
