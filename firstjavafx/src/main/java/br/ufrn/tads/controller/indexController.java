@@ -51,7 +51,8 @@ public class indexController {
         System.out.println(hr);
 
         for (Horarios horarios : hr) {
-                userHorarioList.getItems().add(horarios.getHora());
+                System.out.println(horarios);
+                userHorarioList.getItems().add( horarios.getDiaDele() + " - "+ horarios.getHora());
         } 
 
 }

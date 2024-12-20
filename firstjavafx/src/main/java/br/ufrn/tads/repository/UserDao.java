@@ -59,7 +59,7 @@ public class UserDao implements Dao<User> {
     }
 
     @Override
-    public boolean update(User t, String[] params) {
+    public boolean update(User t, String[] params,String d) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
         

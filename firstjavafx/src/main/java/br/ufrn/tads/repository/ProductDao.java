@@ -114,38 +114,6 @@ public class ProductDao implements Dao<Product> {
         return 0;
     }
 
-    @Override
-    public boolean update(Product product, String[] params) {
-        // if you use params, use parse methods (parseFloat, parseLong etc.)
-        String sql = "update product set name = ?, quantity = ?, value = ? where id = ?"; 
-        Connection conn = null;
-        // prepares a query
-        PreparedStatement preparedStatement = null;
-        
-        try {
-            conn = DBconnection.getConnection();
-            preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, product.getName());
-            preparedStatement.setLong(2, product.getQuantity());
-            preparedStatement.setFloat(3, product.getValue());
-            preparedStatement.setLong(4, product.getId());
-            
-            preparedStatement.execute(); //it is not a query. It is an insert command
-            
-        } catch(Exception e) {
-            e.printStackTrace();
-        } finally {
-            // close all connections
-            try {
-                if (preparedStatement != null) preparedStatement.close();
-                if (conn != null) conn.close();
-                return true;
-            } catch(Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return false;
-    }
 
     @Override
     public boolean delete(Product product) {
@@ -175,5 +143,11 @@ public class ProductDao implements Dao<Product> {
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean update(Product t, String[] params, String d) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 }

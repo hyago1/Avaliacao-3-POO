@@ -13,19 +13,24 @@ public class HorariosService {
        public List<Horarios> buscarHorarios() throws SQLException{
          return HorariosDao.findAll();
     }
-       public List<Horarios> buscarHorariosParaTabelaDoAdmin() throws SQLException{
-         return HorariosDao.findAllParaTabelaDoAdmin();
+    
+       public List<Horarios> buscarHorariosPeloDia(String d) throws SQLException{
+        System.out.println("Chegou no ServiceHorario " + d);
+         return HorariosDao.findAllPeloDia(d);
+    }
+       public List<Horarios> buscarHorariosParaTabelaDoAdmin(String d) throws SQLException{
+         return HorariosDao.findAllParaTabelaDoAdmin(d);
     }
        public List<Horarios> buscarHorariosId() throws SQLException{
         Long id = UserSession.getInstance().getId();
         System.out.println("hrService: "+id);
          return HorariosDao.findById(id);
     }
-        public void confirmar(Horarios t){
-            HorariosDao.update(t, null);
+        public void confirmar(Horarios t, String d){
+            HorariosDao.update(t, null,d );
     }
-        public void cancelarHorario(Horarios t){
-            HorariosDao.cancelarHorario(t);
+        public void cancelarHorario(Horarios t , String d){
+            HorariosDao.cancelarHorario(t, d);
     }
 
 }

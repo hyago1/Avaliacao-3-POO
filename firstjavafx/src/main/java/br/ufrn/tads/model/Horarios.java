@@ -6,20 +6,26 @@ public class Horarios {
 
     private int id;
     private Time hora;
-
-    private Boolean vago;
-    private String agendadoPor;
-
-    public Horarios() {
-   
-    }
-
+    private String diaDele;
+    private String AgendadoPor;
     public String getAgendadoPor() {
-        return agendadoPor;
+        return AgendadoPor;
     }
 
     public void setAgendadoPor(String agendadoPor) {
-        this.agendadoPor = agendadoPor;
+        AgendadoPor = agendadoPor;
+    }
+
+    public String getDiaDele() {
+        return diaDele;
+    }
+
+    public void setDiaDele(String diaDele) {
+        this.diaDele = diaDele;
+    }
+
+    public Horarios() {
+   
     }
 
     public Time getHora() {
@@ -30,13 +36,6 @@ public class Horarios {
         this.hora = hora;
     }
 
-    public Boolean getVago() {
-        return vago;
-    }
-
-    public void setVago(Boolean vago) {
-        this.vago = vago;
-    }
 
     public int getId() {
         return id;
