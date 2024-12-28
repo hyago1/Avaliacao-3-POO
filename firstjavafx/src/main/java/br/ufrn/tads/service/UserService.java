@@ -30,7 +30,7 @@ public class UserService {
         User user = new User(nome, Senha, CPF);
 
         
-            userDao.save(user);
+            userDao.save(user, 0);
         
       
         

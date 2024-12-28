@@ -23,7 +23,7 @@ public class UserDao implements Dao<User> {
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
     @Override
-    public int save(User user) {
+    public int save(User user, int d) {
         // TODO Auto-generated method stub
         
         Connection cnn = null;
@@ -59,14 +59,14 @@ public class UserDao implements Dao<User> {
     }
 
     @Override
-    public boolean update(User t, String[] params,String d) {
+    public boolean update(User t, String[] params,int d) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
         
     }
 
     @Override
-    public boolean delete(User t) {
+    public boolean delete(User t , int d) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }

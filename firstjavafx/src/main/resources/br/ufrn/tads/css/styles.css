@@ -31,6 +31,7 @@
 
 }
 .column{
+    width: 100%;
     -fx-text-fill: white;
     -fx-color: aliceblue;
     -fx-background-color: rgb(69, 71, 73);

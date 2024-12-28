@@ -47,7 +47,6 @@ public class loginController {
         String senha = pwUser.getText();
         Long cpf = null;
         if (cpfUser.getText() != "") {
-
             cpf = Long.parseLong(cpfUser.getText());
         }
         if (!senha.isEmpty() && cpf != null) {

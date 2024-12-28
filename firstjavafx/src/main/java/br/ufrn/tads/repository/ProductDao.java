@@ -84,7 +84,7 @@ public class ProductDao implements Dao<Product> {
     }
 
     @Override
-    public int save(Product product) {
+    public int save(Product product, int d) {
         String sql = "insert into product (name, quantity, value)" + " values (?, ?, ?)"; 
         Connection conn = null;
         // prepares a query
@@ -116,7 +116,7 @@ public class ProductDao implements Dao<Product> {
 
 
     @Override
-    public boolean delete(Product product) {
+    public boolean delete(Product product, int d) {
         String sql = "delete from product where id = ?"; 
         Connection conn = null;
         // prepares a query
@@ -146,7 +146,7 @@ public class ProductDao implements Dao<Product> {
     }
 
     @Override
-    public boolean update(Product t, String[] params, String d) {
+    public boolean update(Product t, String[] params, int d) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
