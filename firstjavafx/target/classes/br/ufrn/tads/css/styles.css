@@ -13,7 +13,7 @@
 
 }
 .userPainel{
-    -fx-background-color: #333333; 
+    -fx-background-color:  #FFEB3B; 
     -fx-background-radius: 10; 
     -fx-border-radius: 10; 
     
@@ -22,6 +22,7 @@
 .btnsLogin{
     -fx-background-color: rgb(29, 112, 47);
 }
+
 .btnsLogin:hover{
     -fx-background-color: rgb(46, 155, 70);
 }

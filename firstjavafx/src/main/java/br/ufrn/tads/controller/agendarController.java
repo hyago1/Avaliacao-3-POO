@@ -63,6 +63,7 @@ public class agendarController {
                     itemDay = diasDaSemana.get(item.getText());
                     buscarHorarios(itemDay);
                     System.out.println("vvvvvvvvvvvvv " +itemDay );
+                    day.setText(item.getText());
                     atualizarList();
                 } catch (SQLException e1) {
                     // TODO Auto-generated catch block
