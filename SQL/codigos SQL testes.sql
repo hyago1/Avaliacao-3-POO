@@ -1,8 +1,17 @@
 // inicio do script
 
 
+CREATE TABLE IF NOT EXISTS public.usuarios(
+    id serial NOT NULL,
+    nome character varying(100) NOT NULL,
+    cpf bigint NOT NULL,
+    senha character varying(100) NOT NULL,
+    CONSTRAINT usuarios_pkey PRIMARY KEY (id),
+    CONSTRAINT usuarios_cpf_key UNIQUE (cpf)
+);
+
 CREATE TABLE IF NOT EXISTS public.agendamentos(
-    id integer NOT NULL DEFAULT nextval('dias_horarios_id_seq'::regclass),
+    id serial  NOT NULL  ,
     id_dia integer NOT NULL,
     id_horario integer NOT NULL,
     vago boolean NOT NULL,
@@ -10,27 +19,17 @@ CREATE TABLE IF NOT EXISTS public.agendamentos(
     CONSTRAINT dias_horarios_pkey PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS public.dias_semana(
-    id_dia serial NOT NULL,
-    nome_dia character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT dias_semana_pkey PRIMARY KEY (id_dia)
-);
 
 CREATE TABLE IF NOT EXISTS public.horarios(
     id serial NOT NULL,
     hora time without time zone NOT NULL,
     CONSTRAINT horarios_pkey PRIMARY KEY (id)
 );
-
-CREATE TABLE IF NOT EXISTS public.usuarios(
-    id serial NOT NULL,
-    nome character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    cpf bigint NOT NULL,
-    senha character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT usuarios_pkey PRIMARY KEY (id),
-    CONSTRAINT usuarios_cpf_key UNIQUE (cpf)
+CREATE TABLE IF NOT EXISTS public.dias_semana(
+    id_dia serial NOT NULL,
+    nome_dia character varying(20)  NOT NULL,
+    CONSTRAINT dias_semana_pkey PRIMARY KEY (id_dia)
 );
-
 ALTER TABLE IF EXISTS public.agendamentos
     ADD CONSTRAINT dias_horarios_agendado_por_fkey FOREIGN KEY (agendado_por)
     REFERENCES public.usuarios (id) MATCH SIMPLE

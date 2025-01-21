@@ -35,6 +35,9 @@ public class HorariosService {
         public void deletarHorario(Horarios t){
             HorariosDao.deletarHorario(t);
     }
+    public void updateHour(Horarios h){
+        HorariosDao.update(h,null,h.getId());
+}
 
 
 }

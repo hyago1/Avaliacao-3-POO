@@ -71,7 +71,19 @@ pwUser.deselect();
 
             if (!temCpf) {
                 userService.saveUser(nome, cpf, senha);
-
+                setMsg("Cadastrado com sucesso! ");
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                      
+                        try {
+                            App.setRoot("login");
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                }, 1500);
             } else {
 
                 setMsg("Este usuario já existe");

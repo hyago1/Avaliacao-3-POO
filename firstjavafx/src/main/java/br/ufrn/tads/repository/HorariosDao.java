@@ -169,8 +169,33 @@ public class HorariosDao implements Dao<Horarios> {
 
     @Override
     public boolean update(Horarios t, String[] params, int d) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        String sql = "update horarios set hora = ?  where id = ?";
+
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            conn = DBconnection.getConnection();
+            preparedStatement = conn.prepareStatement(sql);
+            preparedStatement.setTime(1, t.getHora());
+            preparedStatement.setLong(2, d);
+
+            preparedStatement.execute(); // it is not a query. It is an insert command
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // close all connections
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+                if (conn != null)
+                    conn.close();    
+                } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+                return false;
+ 
     }
 
     
